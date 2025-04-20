@@ -3,54 +3,68 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="main.css" />
   <title>Contact form</title>
 </head>
 <body>
   <main>
-    <form novalidate>
+    <form class="form" method="post" action="/" novalidate>
       <h1>Contact Us</h1>
-      <div>
-        <div>
+
+      <div class="form__row">
+        <div class="form__control">
           <label for="first_name">First Name</label>
           <input id="first_name" type="text" name="first_name" aria-describedby="first_name_error_message" aria-invalid="false" required autocomplete="given-name">
           <span id="first_name_error_message" aria-live="polite"></span>
         </div>
-        <div>
+
+        <div class="form__control">
           <label for="last_name">Last Name</label>
           <input id="last_name" type="text" name="last_name" aria-describedby="last_name_error_message" aria-invalid="false" required autocomplete="family-name">
           <span id="last_name_error_message" aria-live="polite"></span>
         </div>
       </div>
-      <div>
-        <label for="email">Email Address</label>
-        <input id="email" type="email" name="email" aria-describedby="email_error_message" aria-invalid="false" required autocomplete="email">
-        <span id="email_error_message" aria-live="polite"></span>
+      
+      <div class="form__row">
+        <div class="form__control">
+          <label for="email">Email Address</label>
+          <input id="email" type="email" name="email" aria-describedby="email_error_message" aria-invalid="false" required autocomplete="email">
+          <span id="email_error_message" aria-live="polite"></span>
+        </div>
       </div>
-      <fieldset aria-describedby="query_type_error_message" aria-invalid="false">
+      
+      <fieldset class="form__fieldset" aria-describedby="query_type_error_message" aria-invalid="false">
         <legend>Query Type</legend>
-        <div>
-          <div>
+        <div class="form__row">
+          <div class="form__control-radio">
             <input id="general_enquiry" type="radio" name="query_type" required>
             <label for="general_enquiry">General Enquiry</label>
           </div>
-          <div>
+          <div class="form__control-radio">
             <input id="support_request" type="radio" name="query_type">
             <label for="support_request">Support Request</label>
           </div>
         </div>
         <span id="query_type_error_message" aria-live="polite"></span>
       </fieldset>
-      <div>
-        <label for="message">Message</label>
-        <textarea id="message" name="message" aria-describedby="message_error_message" aria-invalid="false" required></textarea>
-        <span id="message_error_message" aria-live="polite"></span>
+      
+      <div class="form__row">
+        <div class="form__control">
+          <label for="message">Message</label>
+          <textarea rows="10" id="message" name="message" aria-describedby="message_error_message" aria-invalid="false" required></textarea>
+          <span id="message_error_message" aria-live="polite"></span>
+        </div>
       </div>
-      <div>
-        <input id="consent" name="consent" type="checkbox" aria-describedby="consent_error_message" aria-invalid="false" required>
-        <label for="consent">I consent to being contacted by the team</label>
-        <span id="consent_error_message" aria-live="polite"></span>
+
+      <div class="form__row">
+        <div class="form__control-checkbox">
+          <input id="consent" name="consent" type="checkbox" aria-describedby="consent_error_message" aria-invalid="false" required>
+          <label for="consent">I consent to being contacted by the team</label>
+          <span id="consent_error_message" aria-live="polite"></span>
+        </div>
       </div>
-      <button type="submit">Submit</button>
+      
+      <button type="submit" class="form__btn-submit">Submit</button>
     </form>
   </main>
 

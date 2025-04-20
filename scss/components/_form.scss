@@ -1,0 +1,74 @@
+@use '../abstracts/' as a;
+
+.form {
+    width: 100%;
+    max-width: a.rem(736);
+    background-color: white;
+    padding: a.rem(24);
+    border-radius: a.rem(16);
+
+    @include a.add-flex(column, $gap: a.rem(24));
+
+    &__row {
+        @include a.add-flex(column, $gap: a.rem(24));
+
+        @media all and (min-width: 768px) {
+            flex-direction: row;
+            gap: a.rem(16);
+        }
+
+    }
+
+    &__fieldset {
+        @include a.add-flex(column, $gap: a.rem(16));
+
+        legend {
+            margin-bottom: a.rem(8);
+        }
+
+        margin-bottom: a.rem(-8);
+    }
+
+    &__control {
+        flex: 1 1 50%;
+        @include a.add-flex(column, $gap: a.rem(8));
+
+        input {
+            padding: a.rem(12);
+        }
+
+        input, textarea {
+            border: 1px solid a.$grey-500;
+            border-radius: a.rem(8);
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        &-radio {
+            flex: 1 1 50%;
+            @include a.add-flex(row, $gap: a.rem(8));
+            padding: a.rem(12) a.rem(24);
+            border: 1px solid a.$grey-500;
+            border-radius: a.rem(8);
+        }
+
+        &-checkbox {
+            @include a.add-flex(row, $align-items: center, $gap: a.rem(16));
+        }
+    }
+
+    &__btn-submit {
+        padding: a.rem(16) a.rem(40);
+        border-radius: a.rem(8);
+        background-color: a.$green-600;
+        color: white;
+
+        &:hover {
+            background-color: a.$green-900;
+            cursor: pointer;
+        }
+    }
+
+}
