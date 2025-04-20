@@ -7,50 +7,50 @@
 </head>
 <body>
   <main>
-    <form>
+    <form novalidate>
       <h1>Contact Us</h1>
       <div>
         <div>
           <label for="first_name">First Name</label>
-          <input id="first_name" type="text">
-          <span></span>
+          <input id="first_name" type="text" name="first_name" aria-describedby="first_name_error_message" aria-invalid="false" required autocomplete="given-name">
+          <span id="first_name_error_message" aria-live="polite"></span>
         </div>
         <div>
           <label for="last_name">Last Name</label>
-          <input id="last_name" type="text">
-          <span></span>
+          <input id="last_name" type="text" name="last_name" aria-describedby="last_name_error_message" aria-invalid="false" required autocomplete="family-name">
+          <span id="last_name_error_message" aria-live="polite"></span>
         </div>
       </div>
       <div>
         <label for="email">Email Address</label>
-        <input id="email" type="email">
-        <span></span>
+        <input id="email" type="email" name="email" aria-describedby="email_error_message" aria-invalid="false" required autocomplete="email">
+        <span id="email_error_message" aria-live="polite"></span>
       </div>
-      <fieldset>
+      <fieldset aria-describedby="query_type_error_message" aria-invalid="false">
         <legend>Query Type</legend>
         <div>
           <div>
-            <input id="general_enquiry" type="radio">
+            <input id="general_enquiry" type="radio" name="query_type" required>
             <label for="general_enquiry">General Enquiry</label>
           </div>
           <div>
-            <input id="support_request" type="radio">
+            <input id="support_request" type="radio" name="query_type">
             <label for="support_request">Support Request</label>
           </div>
         </div>
-        <span></span>
+        <span id="query_type_error_message" aria-live="polite"></span>
       </fieldset>
       <div>
         <label for="message">Message</label>
-        <textarea id="message" name=""></textarea>
-        <span></span>
+        <textarea id="message" name="message" aria-describedby="message_error_message" aria-invalid="false" required></textarea>
+        <span id="message_error_message" aria-live="polite"></span>
       </div>
       <div>
-        <input id="consent" type="checkbox">
+        <input id="consent" name="consent" type="checkbox" aria-describedby="consent_error_message" aria-invalid="false" required>
         <label for="consent">I consent to being contacted by the team</label>
-        <span></span>
+        <span id="consent_error_message" aria-live="polite"></span>
       </div>
-      <button>Submit</button>
+      <button type="submit">Submit</button>
     </form>
   </main>
 
