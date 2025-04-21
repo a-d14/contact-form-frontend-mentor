@@ -4,37 +4,39 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="main.css" />
+  <script src="main.js" defer></script>
   <title>Contact form</title>
 </head>
 <body>
+  <svg id="definition" version="1.1" xmlns="http://www.w3.org/2000/svg"><defs><symbol id="required" viewbox="0 0 128 128"><g><path d="M110.1,16.4L75.8,56.8l0.3,1l50.6-10.2v32.2l-50.9-8.9l-0.3,1l34.7,39.1l-28.3,16.5L63.7,78.2L63,78.5   l-18.5,49L17.2,111l34.1-39.8v-0.6l-50,9.2V47.6l49.3,9.9l0.3-0.6L17.2,16.7L45.5,0.5l17.8,48.7H64L82.1,0.5L110.1,16.4z"></path></g></symbol></defs></svg>
   <main>
     <form class="form" method="post" action="/" novalidate>
       <h1>Contact Us</h1>
 
       <div class="form__row">
         <div class="form__control">
-          <label for="first_name">First Name</label>
+          <label for="first_name">First Name <svg class="icon" focusable="false"><use xlink:href="#required"></use></svg></label>
           <input id="first_name" type="text" name="first_name" aria-describedby="first_name_error_message" aria-invalid="false" required autocomplete="given-name">
-          <span id="first_name_error_message" aria-live="polite"></span>
+          <span class="error" id="first_name_error_message" aria-live="polite"></span>
         </div>
 
         <div class="form__control">
-          <label for="last_name">Last Name</label>
+          <label for="last_name">Last Name <svg class="icon" focusable="false"><use xlink:href="#required"></use></svg></label>
           <input id="last_name" type="text" name="last_name" aria-describedby="last_name_error_message" aria-invalid="false" required autocomplete="family-name">
-          <span id="last_name_error_message" aria-live="polite"></span>
+          <span class="error" id="last_name_error_message" aria-live="polite"></span>
         </div>
       </div>
       
       <div class="form__row">
         <div class="form__control">
-          <label for="email">Email Address</label>
+          <label for="email">Email Address <svg class="icon" focusable="false"><use xlink:href="#required"></use></svg></label>
           <input id="email" type="email" name="email" aria-describedby="email_error_message" aria-invalid="false" required autocomplete="email">
-          <span id="email_error_message" aria-live="polite"></span>
+          <span class="error" id="email_error_message" aria-live="polite"></span>
         </div>
       </div>
       
       <fieldset class="form__fieldset" aria-describedby="query_type_error_message" aria-invalid="false">
-        <legend>Query Type</legend>
+        <legend>Query Type <svg class="icon" focusable="false"><use xlink:href="#required"></use></svg></legend>
         <div class="form__row">
           <div class="form__control-radio">
             <input id="general_enquiry" type="radio" name="query_type" required>
@@ -45,23 +47,23 @@
             <label for="support_request">Support Request</label>
           </div>
         </div>
-        <span id="query_type_error_message" aria-live="polite"></span>
+        <span class="error" id="query_type_error_message" aria-live="polite"></span>
       </fieldset>
       
       <div class="form__row">
         <div class="form__control">
-          <label for="message">Message</label>
+          <label for="message">Message <svg class="icon" focusable="false"><use xlink:href="#required"></use></svg></label>
           <textarea rows="10" id="message" name="message" aria-describedby="message_error_message" aria-invalid="false" required></textarea>
-          <span id="message_error_message" aria-live="polite"></span>
+          <span class="error" id="message_error_message" aria-live="polite"></span>
         </div>
       </div>
 
       <div class="form__row">
         <div class="form__control-checkbox">
           <input id="consent" name="consent" type="checkbox" aria-describedby="consent_error_message" aria-invalid="false" required>
-          <label for="consent">I consent to being contacted by the team</label>
-          <span id="consent_error_message" aria-live="polite"></span>
+          <label for="consent">I consent to being contacted by the team <svg class="icon" focusable="false"><use xlink:href="#required"></use></svg></label>
         </div>
+        <span class="error" id="consent_error_message" aria-live="polite"></span>
       </div>
       
       <button type="submit" class="form__btn-submit">Submit</button>

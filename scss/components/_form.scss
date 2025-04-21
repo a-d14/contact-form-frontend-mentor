@@ -9,6 +9,11 @@
 
     @include a.add-flex(column, $gap: a.rem(24));
 
+    .error {
+        color: a.$error-text-color;
+        display: none;
+    }
+
     &__row {
         @include a.add-flex(column, $gap: a.rem(24));
 
@@ -25,8 +30,6 @@
         legend {
             margin-bottom: a.rem(8);
         }
-
-        margin-bottom: a.rem(-8);
     }
 
     &__control {

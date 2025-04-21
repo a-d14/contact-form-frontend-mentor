@@ -1,0 +1,9 @@
+@use '../abstracts/' as a;
+
+.icon {
+    width: a.rem(7);
+    height: a.rem(7);
+    vertical-align: top;
+    fill: green;
+    margin-left: a.rem(8);
+}
