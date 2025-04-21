@@ -85,6 +85,8 @@
             border: 1px solid a.$grey-500;
             border-radius: a.rem(8);
 
+            font: a.$body-sm;
+
             &:hover {
                 border-color: a.$green-600;
                 cursor: pointer;
@@ -92,11 +94,6 @@
 
             & > *:hover {
                 cursor: pointer;
-            }
-
-            label {
-                font: a.$body-sm;
-                flex-grow: 1;
             }
 
             &:has(> input:checked) {

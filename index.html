@@ -9,8 +9,12 @@
 </head>
 <body>
   <svg style="display:none;" id="definition" version="1.1" xmlns="http://www.w3.org/2000/svg"><defs><symbol id="required" viewbox="0 0 128 128"><g><path d="M110.1,16.4L75.8,56.8l0.3,1l50.6-10.2v32.2l-50.9-8.9l-0.3,1l34.7,39.1l-28.3,16.5L63.7,78.2L63,78.5   l-18.5,49L17.2,111l34.1-39.8v-0.6l-50,9.2V47.6l49.3,9.9l0.3-0.6L17.2,16.7L45.5,0.5l17.8,48.7H64L82.1,0.5L110.1,16.4z"></path></g></symbol></defs></svg>
-  <dialog>
-
+  <dialog open>
+    <h2>
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" fill="none" viewBox="0 0 20 21"><path fill="#fff" d="M14.28 7.72a.748.748 0 0 1 0 1.06l-5.25 5.25a.748.748 0 0 1-1.06 0l-2.25-2.25a.75.75 0 1 1 1.06-1.06l1.72 1.72 4.72-4.72a.75.75 0 0 1 1.06 0Zm5.47 2.78A9.75 9.75 0 1 1 10 .75a9.76 9.76 0 0 1 9.75 9.75Zm-1.5 0A8.25 8.25 0 1 0 10 18.75a8.26 8.26 0 0 0 8.25-8.25Z"/></svg>
+      Message Sent!
+    </h2>
+    <p>Thanks for completing the form. We'll be in touch soon.</p>
   </dialog>
   <main>
     <form class="form" method="post" action="/" novalidate>
@@ -41,13 +45,14 @@
       <fieldset class="form__fieldset" aria-describedby="query_type_error_message" aria-invalid="false">
         <legend>Query Type <svg class="icon" focusable="false"><use xlink:href="#required"></use></svg></legend>
         <div class="form__row">
-          <div class="form__control-radio">
+          <label class="form__control-radio" for="general_enquiry">
             <input id="general_enquiry" type="radio" name="query_type" required>
-            <label for="general_enquiry">General Enquiry</label>
-          </div>
-          <div class="form__control-radio">
+            <span>General Enquiry</span>
+          </label>
+          <label class="form__control-radio" for="support_request">
             <input id="support_request" type="radio" name="query_type">
-            <label for="support_request">Support Request</label>
+            <span>Support Request</span>
+          </label>
           </div>
         </div>
         <span class="error-msg" id="query_type_error_message" aria-live="polite"></span>
@@ -56,7 +61,7 @@
       <div class="form__row">
         <div class="form__control">
           <label for="message">Message <svg class="icon" focusable="false"><use xlink:href="#required"></use></svg></label>
-          <textarea rows="10" id="message" name="message" aria-describedby="message_error_message" aria-invalid="false" required></textarea>
+          <textarea rows="5" id="message" name="message" aria-describedby="message_error_message" aria-invalid="false" required></textarea>
           <span class="error-msg" id="message_error_message" aria-live="polite"></span>
         </div>
       </div>

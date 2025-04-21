@@ -1,0 +1,38 @@
+@use '../abstracts/' as a;
+
+dialog {
+    opacity: 0;
+    position: fixed;
+    top: a.rem(24);
+    left: 50%;
+    transform: translateX(-50%) translateY(-30%);
+    background-color: a.$gray-900;
+    color: white;
+    padding: a.rem(24);
+    border-radius: a.rem(12);
+
+    transition: 0.5s all;
+
+    width: a.rem(327);
+    max-width: a.rem(450);
+
+    @media all and (min-width: 768px) {
+        width: 100%;
+    }
+
+    @include a.add-flex(column, $gap: a.rem(8));
+
+    h2 {
+        font: a.$body-md-bold;
+        @include a.add-flex(row, $align-items: center, $gap: a.rem(8));
+    }
+
+    p {
+        font: a.$body-sm;
+    }
+
+    &.open {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}

@@ -2,6 +2,8 @@ const form = document.querySelector('.form');
 const inputs = document.querySelectorAll('input:not([type="checkbox"]):not([type="radio"]), textarea');
 const radioGroup = form.querySelectorAll('input[name="query_type"]');
 
+const dialog = document.querySelector('dialog');
+
 inputs.forEach(el => el.addEventListener('blur', (e) => {    
     const inputElement = e.target;
     const errorMsgContainer = document.getElementById(inputElement.getAttribute('aria-describedby'));    
@@ -99,6 +101,10 @@ form.addEventListener('submit', (e) => {
     });
 
     if (formIsValid) {
-        form.submit();
+        form.reset();
+        dialog.classList.add('open');
+        setTimeout(() => {
+            dialog.classList.remove('open');
+        }, 2000);
     }
 });
