@@ -46,11 +46,11 @@
         <legend>Query Type <svg class="icon" focusable="false"><use xlink:href="#required"></use></svg></legend>
         <div class="form__row">
           <label class="form__control-radio" for="general_enquiry">
-            <input id="general_enquiry" type="radio" name="query_type" required>
+            <input class="radio" id="general_enquiry" type="radio" name="query_type" required>
             <span>General Enquiry</span>
           </label>
           <label class="form__control-radio" for="support_request">
-            <input id="support_request" type="radio" name="query_type">
+            <input class="radio" id="support_request" type="radio" name="query_type">
             <span>Support Request</span>
           </label>
           </div>
@@ -69,7 +69,7 @@
       <div class="form__row">
         <div class="form__control-checkbox">
           <div class="form__control-checkbox-input">
-            <input id="consent" name="consent" type="checkbox" aria-describedby="consent_error_message" aria-invalid="false" required>
+            <input class="checkbox" id="consent" name="consent" type="checkbox" aria-describedby="consent_error_message" aria-invalid="false" required>
             <label for="consent">I consent to being contacted by the team <svg class="icon" focusable="false"><use xlink:href="#required"></use></svg></label>
           </div>
           <span class="error-msg" id="consent_error_message" aria-live="polite"></span>

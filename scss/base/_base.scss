@@ -1,7 +1,7 @@
 @use '../abstracts/' as a;
 
 body {
-    @include a.add-flex(column, center, center);
+    @include a.add-flex(column, center, center, $gap: a.rem(16));
     background-color: #E0F1E8;
     padding: a.rem(16);
 }

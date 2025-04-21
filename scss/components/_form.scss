@@ -24,10 +24,6 @@
         font: a.$body-sm;
     }
 
-    // .selected {
-    //     background-color: a.$green-200;
-    // }
-
     &__row {
         @include a.add-flex(column, $gap: a.rem(24));
 
@@ -80,7 +76,7 @@
 
         &-radio {
             flex: 1 1 50%;
-            @include a.add-flex(row, $gap: a.rem(8));
+            @include a.add-flex(row, $align-items: center, $gap: a.rem(8));
             padding: a.rem(12) a.rem(24);
             border: 1px solid a.$grey-500;
             border-radius: a.rem(8);

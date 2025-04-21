@@ -1,0 +1,10 @@
+@use '../abstracts/' as a;
+
+footer {
+    font: a.$body-sm;
+    font-size: a.rem(14);
+
+    @media all and (min-width: 768px) {
+        font-size: a.rem(16);
+    }
+}
