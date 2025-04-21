@@ -1,6 +1,14 @@
-$grey-500: #86A2A5;
+@use './functions' as f;
 
+$grey-500: #86A2A5;
+$gray-900: #2A4144;
+
+$green-200: #E0F1E8;
 $green-600: #0C7D69;
-$green-900: #2A4144;
 
 $error-text-color: #D73C3C;
+
+$heading: f.rem(32)/1 'Karla Bold';
+$body-md-bold: f.rem(18)/1.5 'Karla Bold';
+$body-md: f.rem(18)/1.5 'Karla Regular';
+$body-sm: f.rem(16)/1.5 'Karla Regular';

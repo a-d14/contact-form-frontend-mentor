@@ -9,10 +9,24 @@
 
     @include a.add-flex(column, $gap: a.rem(24));
 
-    .error {
+    @media all and (min-width: 768px) {
+        padding: a.rem(40);
+    }
+
+    h1 {
+        font: a.$heading;
+        letter-spacing: -1px;
+    }
+
+    .error-msg {
         color: a.$error-text-color;
         display: none;
+        font: a.$body-sm;
     }
+
+    // .selected {
+    //     background-color: a.$green-200;
+    // }
 
     &__row {
         @include a.add-flex(column, $gap: a.rem(24));
@@ -21,7 +35,6 @@
             flex-direction: row;
             gap: a.rem(16);
         }
-
     }
 
     &__fieldset {
@@ -29,6 +42,7 @@
 
         legend {
             margin-bottom: a.rem(8);
+            font: a.$body-sm;
         }
     }
 
@@ -36,17 +50,32 @@
         flex: 1 1 50%;
         @include a.add-flex(column, $gap: a.rem(8));
 
+        label {
+            font: a.$body-sm;
+        }
+
         input {
             padding: a.rem(12);
+            outline: none;
         }
 
         input, textarea {
             border: 1px solid a.$grey-500;
             border-radius: a.rem(8);
+            font: a.$body-md;
+
+            &:hover {
+                border-color: a.$green-600;
+            }
+
+            &.error {
+                border-color: a.$error-text-color;
+            }
         }
 
         textarea {
             resize: none;
+            padding: a.rem(12) a.rem(24);
         }
 
         &-radio {
@@ -55,10 +84,48 @@
             padding: a.rem(12) a.rem(24);
             border: 1px solid a.$grey-500;
             border-radius: a.rem(8);
+
+            &:hover {
+                border-color: a.$green-600;
+                cursor: pointer;
+            }
+
+            & > *:hover {
+                cursor: pointer;
+            }
+
+            label {
+                font: a.$body-sm;
+                flex-grow: 1;
+            }
+
+            &:has(> input:checked) {
+                background-color: a.$green-200;
+            }
         }
 
         &-checkbox {
-            @include a.add-flex(row, $align-items: center, $gap: a.rem(16));
+            @include a.add-flex(column, $gap: a.rem(8));
+            align-self: flex-start;
+            flex-grow: 1;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            &-input {
+                @include a.add-flex(row, $align-items: center, $gap: a.rem(16));
+
+                label {
+                    font: a.$body-sm;
+                    flex-grow: 1;
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+            }
+
         }
     }
 
@@ -68,8 +135,10 @@
         background-color: a.$green-600;
         color: white;
 
+        font: a.$body-md-bold;
+
         &:hover {
-            background-color: a.$green-900;
+            background-color: a.$gray-900;
             cursor: pointer;
         }
     }
